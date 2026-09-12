@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: trevoga-kyiv-oblast-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ALERTS_API_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        value: "@Trevoga_Kiev_oblast"
+      - key: POLL_INTERVAL
+        value: "30"
